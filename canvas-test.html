@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    </style>
+  </head>
+  <body onload="moveSomeRect(); somemorerects1(); ">
+    <canvas width="1000" height="800" id="testcanvas">
+    	
+    </canvas>
+
+
+
+  </body>
+<script>
+  var x = 0
+  var y = 225
+
+  function moveSomeRect() {
+  	
+  	setInterval(drawRect, 10)
+  	
+  }
+  
+
+  function drawRect() {
+  	
+  	var canvasContext = document.getElementById("testcanvas").getContext("2d")
+  	canvasContext.clearRect(0,0,1500,2000)
+    canvasContext.fillRect(x, y, 30, 30)
+    x = x + 1;
+  }
+
+  window.onkeydown = function(event) {
+  	var canvasContext =document.getElementById("testcanvas").getContext("2d")
+  	
+    var keyPr = event.keyCode;
+    if(keyPr === 38 && y>10) {      
+        y = y-20;
+    }
+        else if(keyPr === 40 && y<=760){
+            y = y+20;
+    } 
+  canvasContext.clearRect(0,0,30,30)
+
+}
+
+function somemorerects1()  {
+	setInterval(obs1,10)
+
+}
+
+
+function obs1() {
+	var canvasContext = document.getElementById("testcanvas").getContext("2d")
+	canvasContext.fillRect(0,0,30,200)
+	canvasContext.fillRect(200,0,30,350)
+	canvasContext.fillRect(400,0,30,200)
+	canvasContext.fillRect(600,0,30,100)
+	canvasContext.fillRect(800,0,30,400)
+	canvasContext.fillRect(0,300,30,700)
+	canvasContext.fillRect(200,450,30,700)
+	canvasContext.fillRect(400,300,30,500)
+    canvasContext.fillRect(800,300,30,450)
+    canvasContext.fillRect(600,200,30,800)
+	
+}
+
+ function stop() {
+ 	var canvasContext = document.getElementById("testcanvas").getContext("2d")
+ 	
+ }
+
+
+
+
+</script>
